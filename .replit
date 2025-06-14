@@ -12,3 +12,14 @@ channel = "stable-24_11"
 run = ["node", "index.js"]
 deploymentTarget = "autoscale"
 ignorePorts = false
+
+[workflows]
+
+[[workflows.workflow]]
+name = "task01"
+mode = "sequential"
+author = 32658732
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "node task01/task01.js"
